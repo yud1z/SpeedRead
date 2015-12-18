@@ -55,6 +55,17 @@ $(function(){
 
   $('#button_input_file').change(function(evt){
     var files = evt.target.files; // FileList object
+    var textType = /text*/;
+
+    var file = $(this)[0].files[0];
+
+    if (file.type.match(textType)) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        $('#content_text').html(reader.result);
+      }
+      reader.readAsText(file);	
+    }
 
     var output = [];
     for (var i = 0, f; f = files[i]; i++) {
