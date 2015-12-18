@@ -1,6 +1,5 @@
 $(function(){
 
-  
     $('#button_play').click(function(){
       $('#button_play').hide(); 
       $('#button_pause').show(); 
@@ -33,6 +32,11 @@ $(function(){
       if (default_wpm > 100) {
         $('#count_wpm').html(default_wpm - 50); 
       }
+    });
+
+
+    $('#button_click_file').bind("click", function(){
+      $('#button_input_file').click(); 
     });
 
 });
