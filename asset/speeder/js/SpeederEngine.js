@@ -124,6 +124,7 @@ function EngGetNextChunk(mode) {
   var txt = "";
   var oldPos = _Pos;
   _Offset = 0.0;
+  /*console.log(_ChunkSize);*/
 
   for (var i = 0; i < _ChunkSize; i++) {
     if (_Pos > _WordCount - 1) break;
