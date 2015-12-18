@@ -10,7 +10,7 @@ var STATE = {
 };
 
 var wpm = 300;
-var chunk = 3;
+var chunk = 1;
 var chunkLen = 20;
 var txt;
 var wpmdelta = 50;
@@ -167,7 +167,7 @@ function InitEngine() {
 
       var res = Engine.setText($('#content_text').text());
       changeState(STATE.Reading);
-      changeChunkSize(-1);
+      changeChunkSize(1);
       changeWPM(300);
       Engine.start();
       $('#content_chunk').text(Engine.getNextChunk());
