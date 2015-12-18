@@ -193,12 +193,14 @@ function InitEngine() {
     });
 
     $('#button_expand').click(function(){
+      $('#fscren').html('yes');
       launchIntoFullscreen(document.documentElement);
       $('#button_expand').hide(); 
       $('#button_compress').show(); 
     });
 
     $('#button_compress').click(function(){
+      $('#fscren').html('no');
       exitFullscreen();
       $('#button_compress').hide(); 
       $('#button_expand').show(); 
@@ -248,6 +250,41 @@ function InitEngine() {
 
 
   });
+
+$(document).keydown(function(event){
+
+  if(event.keyCode == 32){  //prev Space
+      if (eState == STATE.Paused) {
+        $('#button_play').click(); 
+      }
+      else{
+        $('#button_pause').click(); 
+      }
+  }
+
+  if(event.keyCode == 74){  //prev J
+        $('#button_speed').click(); 
+  }
+
+  if(event.keyCode == 75){  //prev K
+        $('#button_slow').click(); 
+  }
+
+  if(event.keyCode == 70){  //prev F
+      fscr = $('#fscren').html();
+      if (fscr == "no") {
+        $('#button_expand').click();
+      }
+      else{
+        $('#button_compress').click();
+      }
+  }
+
+  if(event.keyCode == 79){  //prev O
+      $('#button_input_file').click(); 
+  }
+
+});
 
 
 });
