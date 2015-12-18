@@ -58,12 +58,9 @@ $(function(){
       }
     });
 
-
     $('#button_click_file').bind("click", function(){
       $('#button_input_file').click(); 
     });
-
-
 
   $('#button_input_file').change(function(evt){
     var files = evt.target.files; // FileList object

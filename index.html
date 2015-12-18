@@ -18,21 +18,41 @@
   <div style="margin-left:20px;">
     <button type="button" class="btn btn-default navbar-btn" id="button_click_file">Open File</button>
     <input type="file" id="button_input_file" name="some_name" class="hidden" value="">
-    <button type="button" class="btn btn-default navbar-btn pull-right" id="button_expand" title="Full Screen"><i class="fa fa-expand fa-6"></i></button>
-    <button type="button" style="display:none" class="btn btn-default navbar-btn pull-right" id="button_compress" title="Full Screen"><i class="fa fa-compress fa-6"></i></button>
+    <div class="pull-right">
+    <button type="button" class="btn btn-default navbar-btn" id="button_help" data-toggle="modal" data-target="#myModal" title="Full Screen"><i class="fa fa-question fa-6"></i></button>
+    <button type="button" class="btn btn-default navbar-btn" id="button_expand" title="Full Screen"><i class="fa fa-expand fa-6"></i></button>
+    <button type="button" style="display:none" class="btn btn-default navbar-btn" id="button_compress" title="Full Screen"><i class="fa fa-compress fa-6"></i></button>
+    </div>
   </div>
 </nav>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div id="content_text" style="display:none"></div>
 
 <div id="" style="  width: 300px;
   height: 100px;
   padding: 20px;
-
   position: absolute;
   top: 50%;
   left: 50%;
-
   margin: -70px 0 0 -100px;">
   <h1 style="color:white">LORE<span style="color:red">M</span>IPSUM</h1>
 
