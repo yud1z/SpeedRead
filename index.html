@@ -1,29 +1,29 @@
 <html>
-  
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  
-    <title>Spead Reading Apps</title>
-    <link href="asset/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="asset/font-awesome/css/font-awesome.min.css">
-    
-  </head>
 
-  <body>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<title>Spead Reading Apps</title>
+<link href="asset/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="asset/font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<body>
 
 <nav class="navbar navbar-default navbar-fixed-top">
-      <a class="navbar-brand" href="#" style="left:50%;position:absolute;margin-left: -50px;">
-        Speed Reader
-      </a>
-      <div style="margin-left:20px;">
-      <button type="button" class="btn btn-default navbar-btn">Open File</button>
-      <button type="button" class="btn btn-default navbar-btn pull-right" id="button_expand" title="Full Screen"><i class="fa fa-expand fa-6"></i></button>
-      <button type="button" style="display:none" class="btn btn-default navbar-btn pull-right" id="button_compress" title="Full Screen"><i class="fa fa-compress fa-6"></i></button>
-      </div>
+  <a class="navbar-brand" href="#" style="left:50%;position:absolute;margin-left: -50px;">
+    Speed Reader
+  </a>
+  <div style="margin-left:20px;">
+    <button type="button" class="btn btn-default navbar-btn">Open File</button>
+    <button type="button" class="btn btn-default navbar-btn pull-right" id="button_expand" title="Full Screen"><i class="fa fa-expand fa-6"></i></button>
+    <button type="button" style="display:none" class="btn btn-default navbar-btn pull-right" id="button_compress" title="Full Screen"><i class="fa fa-compress fa-6"></i></button>
+  </div>
 </nav>
 
 
-    <div id="" style="  width: 300px;
+<div id="" style="  width: 300px;
   height: 100px;
   padding: 20px;
 
@@ -31,29 +31,27 @@
   top: 50%;
   left: 50%;
 
-  margin: -70px 0 0 -70px;">
+  margin: -70px 0 0 -100px;">
   <h1 style="color:white">LORE<span style="color:red">M</span>IPSUM</h1>
-      
-    </div>
-    
 
+</div>
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
-      <div class="navbar-brand" href="#" style="left:50%;position:absolute;">
-        <a href="#" id="button_play" title="click to play" ><i class="fa fa-play fa-6"></i></a>
-        <a href="#" id="button_pause" style="display:none" title="click to pause"><i class="fa fa-pause fa-6"></i></a>
-      </div>
-      <div class="pull-right">
-      WPM :300 &nbsp; 
-      <button type="button" class="btn btn-default navbar-btn" title="Full Screen"><i class="fa fa-plus fa-6"></i></button>
-      <button type="button" class="btn btn-default navbar-btn" title="Full Screen"><i class="fa fa-minus fa-6"></i></button>
-      </div>
+  <div class="navbar-brand" href="#" style="left:50%;position:absolute;margin-top:-15px;">
+    <button href="#" id="button_play"  class="btn btn-default navbar-btn" title="click to play" ><i class="fa fa-play fa-6"></i></button>
+    <button href="#" id="button_pause"  class="btn btn-default navbar-btn" style="display:none" title="click to pause"><i class="fa fa-pause fa-6"></i></button>
+  </div>
+  <div class="pull-right">
+    WPM : <span id="count_wpm">300</span> &nbsp; 
+    <button type="button" class="btn btn-default navbar-btn" id="button_speed" title="Speed Up"><i class="fa fa-plus fa-6"></i></button>
+    <button type="button" class="btn btn-default navbar-btn" id="button_slow" title="Slow Down"><i class="fa fa-minus fa-6"></i></button>
+  </div>
 </nav>
-    
-      
-    <script src="asset/js/jquery-2.1.4.min.js"></script>
-    <script src="asset/bootstrap/js/bootstrap.min.js"></script>
-    <script src="asset/js/main.js"></script>
-  </body>
+
+
+<script src="asset/js/jquery-2.1.4.min.js"></script>
+<script src="asset/bootstrap/js/bootstrap.min.js"></script>
+<script src="asset/js/main.js"></script>
+</body>
 
 </html>
