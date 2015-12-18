@@ -145,6 +145,7 @@ function EngGetNextChunk(mode) {
     }
     txt += " ";
   }
+    
 
   if (mode == 1) { // When NextChunk is requested from outside
     _Pos = oldPos;

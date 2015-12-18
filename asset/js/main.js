@@ -89,7 +89,7 @@ function changeWPM(delta) {
   wpm += delta;
   Engine.setWPM(wpm);
   saveState();
-  /*$('#divWPM').text(wpm);*/
+  /*$('#count_wpm').text(delta);*/
 }
 
 function saveState() {
@@ -131,7 +131,7 @@ function EngineCallback(state, text) {
     return;
   }
 
-  $('#content_chunk').text(text);
+  $('#content_chunk').html(text);
 }
 
 function InitEngine() {
@@ -208,6 +208,9 @@ function InitEngine() {
       default_wpm = parseInt($('#count_wpm').html());
       if (default_wpm < 1000) {
         $('#count_wpm').html(default_wpm + 50); 
+        default_wpm = parseInt($('#count_wpm').html());
+        wpm_no = parseInt($('#count_wpm').html());
+        changeWPM(wpm_no);
       }
     });
 
@@ -215,6 +218,8 @@ function InitEngine() {
       default_wpm = parseInt($('#count_wpm').html());
       if (default_wpm > 100) {
         $('#count_wpm').html(default_wpm - 50); 
+        wpm_no = parseInt($('#count_wpm').html());
+        changeWPM(-wpm_no);
       }
     });
 
