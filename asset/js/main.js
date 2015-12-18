@@ -162,19 +162,31 @@ function InitEngine() {
   }
 
     $('#button_play').click(function(){
+
+
       $('#button_play').hide(); 
       $('#button_pause').show(); 
 
-      var res = Engine.setText($('#content_text').text());
-      changeState(STATE.Reading);
-      changeChunkSize(1);
-      changeWPM(300);
-      Engine.start();
-      $('#content_chunk').text(Engine.getNextChunk());
+      if (eState == STATE.Paused) {
+        changeState(STATE.Reading);
+        Engine.resume();
+      }
+      else{
+      
+        var res = Engine.setText($('#content_text').text());
+        changeState(STATE.Reading);
+        changeChunkSize(1);
+        changeWPM(300);
+        Engine.start();
+        $('#content_chunk').text(Engine.getNextChunk());
+      }
+
+
 
     });
 
     $('#button_pause').click(function(){
+      changeState(STATE.Paused);
       Engine.pause();
       $('#button_pause').hide(); 
       $('#button_play').show(); 
