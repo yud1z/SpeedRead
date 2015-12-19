@@ -157,7 +157,21 @@ function EngGetNextChunk(mode) {
     _Pos = oldPos;
   }
 
-  return txt;
+  text = mid_text(txt);
+  return text;
+}
+
+function mid_text(txt){
+
+    text = txt.split(/([aeiouAIUEO])(.*)/);
+    /*console.log(text);*/
+    /*console.log(text.length);*/
+    if (text.length <= 1) {
+      return txt;
+    }
+    else  {
+      return text[0] + "<span style='color:red'>" + text[1] + "</span>" + text[2];    
+    }
 }
 
 function EngSetWPM(wpm) {
