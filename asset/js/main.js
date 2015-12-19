@@ -161,26 +161,33 @@ function InitEngine() {
     }
   }
 
-    $('#button_play').click(function(){
+$('#button_play').click(function(){
+
+  txt = $('#content_text').text();
+  if (txt != "") {
+
+    $('#button_play').hide(); 
+    $('#button_pause').show(); 
+
+    if (eState == STATE.Paused) {
+      changeState(STATE.Reading);
+      Engine.resume();
+    }
+    else{
+
+      var res = Engine.setText($('#content_text').text());
+      changeState(STATE.Reading);
+      changeChunkSize(1);
+      changeWPM(300);
+      Engine.start();
+      $('#content_chunk').text(Engine.getNextChunk());
+    }
 
 
-      $('#button_play').hide(); 
-      $('#button_pause').show(); 
-
-      if (eState == STATE.Paused) {
-        changeState(STATE.Reading);
-        Engine.resume();
-      }
-      else{
-      
-        var res = Engine.setText($('#content_text').text());
-        changeState(STATE.Reading);
-        changeChunkSize(1);
-        changeWPM(300);
-        Engine.start();
-        $('#content_chunk').text(Engine.getNextChunk());
-      }
-
+  }
+  else  {
+      $('#button_input_file').click(); 
+  }
 
 
     });
@@ -239,6 +246,7 @@ function InitEngine() {
       var reader = new FileReader();
       reader.onload = function(e) {
         $('#content_text').html(reader.result);
+        $('#button_play').click(); 
       }
       reader.readAsText(file);	
     }
@@ -247,6 +255,7 @@ function InitEngine() {
     for (var i = 0, f; f = files[i]; i++) {
       $('#info_file_name').html(f.name);
     }
+
 
 
   });
