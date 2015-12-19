@@ -87,6 +87,8 @@ function EngSetText(text) {
   _Text = text.replace(/^\s*\n/gm, _paraBreak);
   _WordsArray = _Text.split(/\s|\n/);
   _WordCount = _WordsArray.length;
+  // here to show the word
+  $('#total_word').html(_WordCount - 1);
   _Pos = 0;
   return _WordCount;
 }
@@ -115,6 +117,9 @@ function _EngOnTimer() {
     return;
   }
 
+  cur_wp = parseInt($('#current_wp').html());
+  $('#current_wp').html(cur_wp + 1);
+
   _Cb(EngSTATE.Reading, txt);
   var time4chunk = txt.length * _TimePerChar;
   _Timer.once(time4chunk + _Offset);
@@ -125,6 +130,7 @@ function EngGetNextChunk(mode) {
   var oldPos = _Pos;
   _Offset = 0.0;
   /*console.log(_ChunkSize);*/
+  /*console.log(_WordCount);*/
 
   for (var i = 0; i < _ChunkSize; i++) {
     if (_Pos > _WordCount - 1) break;

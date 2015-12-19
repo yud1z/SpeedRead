@@ -110,7 +110,7 @@ function changeChunkSize(delta) {
   if (chunk + delta < 0) return;
 
   chunk += delta;
-  Engine.setChunk(chunk);
+  Engine.setChunk(delta);
   Engine.setChunkLen(chunkLen);
   saveState();
   /*$('#divChunk').text(chunk);*/

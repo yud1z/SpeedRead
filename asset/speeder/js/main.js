@@ -8,7 +8,7 @@ var STATE = {
 };
 
 var wpm = 300;
-var chunk = 3;
+var chunk = 1;
 var chunkLen = 20;
 var txt;
 var wpmdelta = 50;
